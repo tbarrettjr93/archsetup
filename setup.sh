@@ -56,7 +56,7 @@ curl -L https://ghst.ly/getbhce -o docker-compose.yml
 # install evil-winrm
 gem install evil-winrm
 gem install csv
-echo 'export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH' >> .bashrc
+echo 'export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH' >> ~/.bashrc
 
 echo
 echo "=== Installation Complete! ==="
