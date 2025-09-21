@@ -16,9 +16,6 @@ sudo pacman -S --needed 7zip john chromium nano git wget openssh docker docker-c
 mkdir -p ~/tools
 mkdir -p ~/misc
 
-# Download and install ble.sh
-cd misc && git clone --recursive https://github.com/akinomyoga/ble.sh.git && make -C ble.sh install && cd ..
-
 # Setup Docker
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
@@ -30,7 +27,7 @@ if ! command -v yay; then
 fi
 
 # Install AUR packages
-yay -S --noconfirm burpsuite-pro responder
+yay -S --noconfirm burpsuite-pro responder blesh
 
 # Setup pipx
 pipx ensurepath
@@ -63,10 +60,14 @@ echo "2. Hack away"
 echo
 echo "TOOLS READY:"
 echo "  • burpsuite pro"
-echo "  • Responder.py -h"
+echo "  • responder -h"
 echo "  • nxc -h"
-echo "  • impacket-GetNPUsers -h"
-echo "  • Certipy -h"
+echo "  • impacket collection"
+echo "  • certipy -h"
+echo "  • BloodyAD"
+echo "  • trevorspray"
+echo "  • trevorproxy"
+echo "  • BBOT"
 echo
 echo "BLOODHOUND CE: cd tools/bloodhound, docker compose pull && docker compose up, http://localhost:8080"
 echo "TOOLS DIR: ~/tools"
