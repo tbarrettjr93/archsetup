@@ -4,13 +4,13 @@
 # Run: bash setup.sh
 
 echo "=== Starting Security Tools Installation ==="
-echo "This will take 10-15 minutes. Enter sudo password when prompted."
+echo "This will take 15-20 minutes. Enter sudo password when prompted."
 
 # Update system
 sudo pacman -Syu --noconfirm
 
 # Install core packages
-sudo pacman -S --needed 7zip john chromium nano git wget openssh docker docker-compose base-devel python-pipx --noconfirm
+sudo pacman -S --needed 7zip john nmap rustscan veracrypt chromium nano git wget openssh docker docker-compose base-devel python-pipx --noconfirm
 
 # Create tools & misc directory
 mkdir -p ~/tools
@@ -34,7 +34,7 @@ echo '[[ $- == *i* ]] && source /usr/share/blesh/ble.sh' >> ~/.bashrc
 
 # Setup pipx
 pipx ensurepath
-source ~/.bashrc
+
 # Install pipx packages
 pipx install git+https://github.com/blacklanternsecurity/impacket
 pipx install git+https://github.com/blacklanternsecurity/certipy
@@ -47,7 +47,7 @@ pipx install bloodyAD
 
 # Download BBOT module dependencies 
 
-bbot --install-all-deps
+~/.local/bin/bbot --install-all-deps
 
 # Setup BloodHound CE
 mkdir -p ~/tools/bloodhound-ce
