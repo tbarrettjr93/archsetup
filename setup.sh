@@ -10,19 +10,14 @@ echo "This will take 10-15 minutes. Enter sudo password when prompted."
 sudo pacman -Syu --noconfirm
 
 # Install core packages
-sudo pacman -S --needed 7zip john chromium nano zsh zsh-syntax-highlighting git wget openssh docker docker-compose base-devel python-pipx --noconfirm
+sudo pacman -S --needed 7zip john chromium nano git wget openssh docker docker-compose base-devel python-pipx --noconfirm
 
-# Download .zshrc from GitHub
-echo "Downloading .zshrc from GitHub..."
-curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/refs/heads/main/.zshrc -o ~/.zshrc
-chmod 644 ~/.zshrc
-echo "✓ .zshrc downloaded from GitHub"
-
-# Set zsh as default shell
-chsh -s /usr/bin/zsh || sudo usermod -s /usr/bin/zsh $USER
-
-# Create tools directory
+# Create tools & misc directory
 mkdir -p ~/tools
+mkdir -p ~/misc
+
+# Download and install ble.sh
+cd misc && git clone --recursive https://github.com/akinomyoga/ble.sh.git && make -C ble.sh install && cd ..
 
 # Setup Docker
 sudo systemctl enable --now docker
@@ -39,7 +34,7 @@ yay -S --noconfirm burpsuite-pro responder
 
 # Setup pipx
 pipx ensurepath
-
+source .bashrc
 # Install pipx packages
 pipx install git+https://github.com/blacklanternsecurity/impacket
 pipx install git+https://github.com/blacklanternsecurity/certipy
