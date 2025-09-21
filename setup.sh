@@ -10,7 +10,7 @@ echo "This will take 15-20 minutes. Enter sudo password when prompted."
 sudo pacman -Syu --noconfirm
 
 # Install core packages
-sudo pacman -S --needed 7zip john nmap rustscan veracrypt chromium nano git wget openssh docker docker-compose base-devel python-pipx --noconfirm
+sudo pacman -S --needed ruby 7zip john nmap rustscan veracrypt chromium nano git wget openssh docker docker-compose base-devel python-pipx sqlmap krb5 --noconfirm
 
 # Create tools & misc directory
 mkdir -p ~/tools
@@ -53,6 +53,11 @@ pipx install bloodyAD
 mkdir -p ~/tools/bloodhound-ce
 cd ~/tools/bloodhound-ce
 curl -L https://ghst.ly/getbhce -o docker-compose.yml
+
+# install evil-winrm
+gem install evil-winrm
+gem install csv
+echo 'export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH'
 
 echo
 echo "=== Installation Complete! ==="
