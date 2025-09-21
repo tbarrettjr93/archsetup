@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Simple Arch Linux Security Tools Setup
-# Run: bash setup-security-tools-simple.sh
+# Run: bash setup.sh
 
 echo "=== Starting Security Tools Installation ==="
 echo "This will take 10-15 minutes. Enter sudo password when prompted."
