@@ -14,16 +14,7 @@ sudo pacman -S --needed 7zip john chromium nano zsh zsh-syntax-highlighting git 
 
 # Download .zshrc from GitHub
 echo "Downloading .zshrc from GitHub..."
-if [[ -f ~/.zshrc.backup ]]; then
-    mv ~/.zshrc.backup ~/.zshrc.backup.old
-fi
-curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/refs/heads/main/.zshrc -o ~/.zshrc || {
-    echo "Failed to download .zshrc. Creating backup directory..."
-    mkdir -p ~/.config/zsh
-    curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/refs/heads/main/.zshrc -o ~/.config/zsh/.zshrc
-    echo "Downloaded to ~/.config/zsh/.zshrc"
-    exit 1
-}
+curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/refs/heads/main/.zshrc -o ~/.zshrc
 chmod 644 ~/.zshrc
 echo "✓ .zshrc downloaded from GitHub"
 
@@ -69,9 +60,6 @@ pipx install bloodyAD
 mkdir -p ~/tools/bloodhound-ce
 cd ~/tools/bloodhound-ce
 curl -L https://ghst.ly/getbhce -o docker-compose.yml
-curl -L https://ghst.ly/bhceenv -o .env
-docker compose pull
-docker compose up -d
 
 echo
 echo "=== Installation Complete! ==="
