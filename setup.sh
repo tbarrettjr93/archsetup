@@ -34,7 +34,7 @@ echo '[[ $- == *i* ]] && source /usr/share/blesh/ble.sh' >> ~/.bashrc
 
 # Setup pipx
 pipx ensurepath
-source .bashrc
+source ~/.bashrc
 # Install pipx packages
 pipx install git+https://github.com/blacklanternsecurity/impacket
 pipx install git+https://github.com/blacklanternsecurity/certipy
