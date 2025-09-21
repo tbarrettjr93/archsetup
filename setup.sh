@@ -59,7 +59,7 @@ echo "=== Installation Complete! ==="
 echo
 echo "NEXT STEPS:"
 echo "1. LOG OUT and LOG BACK IN"
-echo "2. Your .zshrc should be ready from GitHub"
+echo "2. Hack away"
 echo
 echo "TOOLS READY:"
 echo "  • burpsuite pro"
