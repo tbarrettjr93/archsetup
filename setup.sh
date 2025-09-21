@@ -56,6 +56,10 @@ pipx install git+https://github.com/blacklanternsecurity/trevorproxy
 pipx install git+https://github.com/blacklanternsecurity/trevorspray
 pipx install bloodyAD
 
+# Download BBOT module dependencies 
+
+bbot --install-all-deps
+
 # Setup BloodHound CE
 mkdir -p ~/tools/bloodhound-ce
 cd ~/tools/bloodhound-ce
