@@ -85,6 +85,7 @@ echo "  • bloodyAD"
 echo "  • trevorspray"
 echo "  • trevorproxy"
 echo "  • BBOT"
+echo "  • evil-winrm"
 echo
 echo "BLOODHOUND CE: cd tools/bloodhound, docker compose pull && docker compose up, http://localhost:8080"
 echo "TOOLS DIR: ~/tools"
