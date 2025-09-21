@@ -21,10 +21,9 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 
 # Install YAY
-if ! command -v yay; then
-    git clone https://aur.archlinux.org/yay.git /tmp/yay
-    cd /tmp/yay && makepkg -si --noconfirm && cd .. && rm -rf /tmp/yay
-fi
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+cd /tmp/yay && makepkg -si --noconfirm && cd .. && rm -rf /tmp/yay
+
 
 # Install AUR packages
 yay -S --noconfirm burpsuite-pro responder blesh
@@ -57,7 +56,7 @@ curl -L https://ghst.ly/getbhce -o docker-compose.yml
 # install evil-winrm
 gem install evil-winrm
 gem install csv
-echo 'export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH'
+echo 'export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH' >> .bashrc
 
 echo
 echo "=== Installation Complete! ==="
