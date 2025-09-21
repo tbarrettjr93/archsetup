@@ -24,12 +24,6 @@ chsh -s /usr/bin/zsh || sudo usermod -s /usr/bin/zsh $USER
 # Create tools directory
 mkdir -p ~/tools
 
-# Setup SSH
-sudo systemctl enable --now sshd
-sudo sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
-sudo sed -i 's/#PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
-sudo systemctl restart sshd
-
 # Setup Docker
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
