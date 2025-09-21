@@ -79,7 +79,7 @@ echo "  • nxc -h"
 echo "  • impacket-GetNPUsers -h"
 echo "  • Certipy -h"
 echo
-echo "BLOODHOUND CE: http://localhost:8080"
+echo "BLOODHOUND CE: cd tools/bloodhound, docker compose pull && docker compose up, http://localhost:8080"
 echo "TOOLS DIR: ~/tools"
 echo
 echo "To update later:"
