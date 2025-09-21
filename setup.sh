@@ -17,10 +17,10 @@ echo "Downloading .zshrc from GitHub..."
 if [[ -f ~/.zshrc.backup ]]; then
     mv ~/.zshrc.backup ~/.zshrc.backup.old
 fi
-curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/main/.zshrc -o ~/.zshrc || {
+curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/refs/heads/main/.zshrc -o ~/.zshrc || {
     echo "Failed to download .zshrc. Creating backup directory..."
     mkdir -p ~/.config/zsh
-    curl -L https://raw.githubusercontent.com/YOURUSERNAME/YOURREPO/main/.zshrc -o ~/.config/zsh/.zshrc
+    curl -L https://raw.githubusercontent.com/tbarrettjr93/archsetup/refs/heads/main/.zshrc -o ~/.config/zsh/.zshrc
     echo "Downloaded to ~/.config/zsh/.zshrc"
     exit 1
 }
@@ -53,7 +53,7 @@ fi
 yay -S --noconfirm burpsuite-pro responder
 
 # Setup pipx
-python -m pipx ensurepath
+pipx ensurepath
 
 # Install pipx packages
 pipx install git+https://github.com/blacklanternsecurity/impacket
